@@ -1,13 +1,13 @@
 # sinatra-books-library
 
-This is a shared community library content management system.
+This is a content management system for a shared library of books.
 
-There are 3 models: Owner, Author, and Book.
+There are 3 models: Book, Category, Author, Owner
 
-An Owner has a name, and has_many Books.
+A Book has a title, author and category. A Book belongs_to an Author. A Book belongs_to an Owner.
 
-A Book has a title, author and category. It belongs to an Owner.
+A Category has_many Author, and has_many Books.
 
-An Author has a name, and has_many Books. 
+An Author has_many Books, and has_many Categories. 
 
-An Owner has_many Authors through Books. 
+An Owner has a name and has_many Books.
