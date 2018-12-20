@@ -2,9 +2,8 @@ class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
       t.string :title
-      t.string :author
-      t.string :category
-      t.integet :owner_id
+      t.integer :author_id
+      t.integer :category_id
     end
   end
 end
