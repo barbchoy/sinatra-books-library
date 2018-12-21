@@ -32,7 +32,6 @@ class ApplicationController < Sinatra::Base
       @author = Author.create(params)
       @author.save
       session[:user_id] = @author.id
-      binding.pry
       redirect to "/books"
     end
   end

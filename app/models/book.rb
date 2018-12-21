@@ -10,4 +10,5 @@ class Book < ActiveRecord::Base
   def self.find_by_slug(slug)
     Book.all.find{|book| book.slug == slug}
   end
+
 end
