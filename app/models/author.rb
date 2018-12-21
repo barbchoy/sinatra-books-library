@@ -1,6 +1,6 @@
 class Author < ActiveRecord::Base
   has_many :books
-  has_many :categories
+  has_many :categorys
 
   def slug
     name.downcase.gsub(" ","-")
