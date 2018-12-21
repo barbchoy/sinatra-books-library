@@ -13,11 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20181220192023) do
 
-  create_table "author_categorys", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "author_id"
-  end
-
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.string "username"

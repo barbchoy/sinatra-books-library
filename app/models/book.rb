@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
 
   belongs_to :author
-  has_one :category
+  belongs_to :category
 
   def slug
     title.downcase.gsub(" ","-")
