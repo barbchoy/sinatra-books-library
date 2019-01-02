@@ -1,6 +1,8 @@
 <h1>All Books</h1>
 <%Book.all.each do |book|%>
   <h2><%=book.title%></h2><br>
-  Category: <%=book.category%><br>
+  Summary: <%=book.summary%><br><br>
+  Category: <%=book.category%><br><br>
   Author: <%=book.author%><br><br>
+  Year Published: <%=book.year_published%><br><br>
 <%end%>

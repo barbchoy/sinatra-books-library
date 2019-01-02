@@ -22,11 +22,13 @@ ActiveRecord::Schema.define(version: 20181220190930) do
 
   create_table "books", force: :cascade do |t|
     t.string  "title"
+    t.integer "year_published"
+    t.text    "summary"
     t.integer "author_id"
     t.integer "category_id"
   end
 
-  create_table "categorys", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
   end
 
