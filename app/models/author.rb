@@ -3,6 +3,8 @@ class Author < ActiveRecord::Base
   has_many :books
   has_many :categorys
 
+  has_secure_password
+
   def slug
     name.downcase.gsub(" ","-")
   end
