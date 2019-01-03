@@ -11,6 +11,14 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/login' do
+    if !logged_in?
+      erb :index
+    else
+      redirect to '/books'
+    end
+  end
+
   post '/login' do
     @author = Author.find_by(:username => params[:username])
     if @author && @author.authenticate(params[:password])
@@ -36,7 +44,7 @@ class ApplicationController < Sinatra::Base
    else
      redirect to '/'
    end
- end
+  end
 
   post '/signup' do
     if params[:username]=="" || params[:password]=="" || params[:email]=="" || params[:name]==""
@@ -56,7 +64,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      @current_user ||= User.find_by(:id => session[:user_id]) if session[:user_id]
+      @current_user ||= Author.find_by(:id => session[:user_id]) if session[:user_id]
     end
   end
 
