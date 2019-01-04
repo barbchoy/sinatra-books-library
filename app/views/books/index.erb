@@ -2,8 +2,8 @@
 <%Book.all.each do |book|%>
   <h2><%=book.title%></h2><br>
   Summary: <%=book.summary%><br><br>
-  Category: <%=book.category%><br><br>
-  Author: <%=book.author%><br><br>
+  Category: <%=book.category.name%><br><br>
+  Author: <%=book.author.name%><br><br>
   Year Published: <%=book.year_published%><br><br>
   <%if @author.name==book.author.name%>
   <a href="/edit">Edit</a>

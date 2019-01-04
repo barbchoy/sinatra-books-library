@@ -1,9 +1,13 @@
 books_list = {
   "Beginning Ruby : From Novice to Professional" => {
+    :author_id => 1,
+    :category_id => 1,
     :year_published => 2016,
     :summary => "Your must-read guide to learning Ruby from the ground up, this book will teach you the principles behind object-oriented programming and within a few chapters you will be able to create a fully functional Ruby application. -- Edited summary fro"
   },
   "Coding : everything you need to get started with programming using Python" => {
+    :author_id => 2,
+    :category_id => 1,
     :year_published => 2017,
     :summary => "Simple explanations and step-by-step guides ease users through the features of the Python programming language, providing them with everything they need to write code in the real world. --Publisher's description"
   }

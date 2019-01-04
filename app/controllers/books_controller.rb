@@ -7,6 +7,27 @@ class BooksController < ApplicationController
     set :session_secret, "secret_password"
   end
 
+  get '/books/:slug/edit' do
+    @book = Book.find_by_slug(params[:slug])
+    @author = Author.find(session[:user_id])
+    if @author.name == @book.author.name
+      erb 'books/edit'
+    else
+      redirect to '/books'
+    end
+  end
+
+  get '/books/:slug/delete' do
+    @book = Book.find_by_slug(params[:slug])
+    @author = Author.find(session[:user_id])
+    if @author.name == @book.author.name
+      @book.destroy
+      redirect to '/books'
+    else
+      redirect to '/books'
+    end
+  end
+
 
   get '/books' do
     if !logged_in?
