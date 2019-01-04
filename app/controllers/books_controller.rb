@@ -11,7 +11,7 @@ class BooksController < ApplicationController
     @book = Book.find_by_slug(params[:slug])
     @author = Author.find(session[:user_id])
     if @author.name == @book.author.name
-      erb 'books/edit'
+      erb :'books/edit'
     else
       redirect to '/books'
     end
