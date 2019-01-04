@@ -1,4 +1,4 @@
-class BooksController < Sinatra::Base
+class BooksController < ApplicationController
 
   configure do
     set :public_folder, 'public'
