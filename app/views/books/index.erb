@@ -5,4 +5,8 @@
   Category: <%=book.category%><br><br>
   Author: <%=book.author%><br><br>
   Year Published: <%=book.year_published%><br><br>
+  <%if @author.name==book.author.name%>
+  <a href="/edit">Edit</a>
+  <a href="/delete">Delete</a>
+  <%end%>
 <%end%>
