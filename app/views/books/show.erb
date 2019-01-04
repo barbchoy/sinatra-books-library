@@ -1,0 +1,10 @@
+<h2><%=@book.title%></h2><br>
+Summary: <%=@book.summary%><br><br>
+Category: <%=@book.category.name%><br><br>
+Author: <%=@book.author.name%><br><br>
+Year Published: <%=@book.year_published%><br><br>
+<a href="/books">Return To All Books</a>
+<%if @author.name==@book.author.name%>
+<a href="/books/<%@book.slug%>/edit">Edit</a>
+<a href="/books/<%@book.slug%>/delete">Delete</a>
+<%end%>
