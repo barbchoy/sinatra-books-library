@@ -7,6 +7,14 @@ class BooksController < ApplicationController
     set :session_secret, "secret_password"
   end
 
+  get '/books/new' do
+    if !logged_in?
+      redirect to '/login'
+    else
+      erb :'books/new'
+    end
+  end
+
   get '/books/:slug/edit' do
     @book = Book.find_by_slug(params[:slug])
     @author = Author.find(session[:user_id])
@@ -50,7 +58,7 @@ class BooksController < ApplicationController
       @book.update(:title => params[:book_title], :summary => params[:book_summary], :year_published => params[:book_year_published])
       @book.category_id = params[:category_id]
       @book.save
-      redirect to '/books/:slug'
+      redirect to ("/books/#{@book.slug}")
     else
       erb 'Cannot Edit Book'
     end
