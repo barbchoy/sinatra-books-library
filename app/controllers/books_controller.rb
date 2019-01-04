@@ -39,6 +39,7 @@ class BooksController < ApplicationController
   end
 
   get '/books/:slug' do
+    @user = Author.find(session[:user_id])
     @book = Book.find_by_slug(params[:slug])
     erb :'/books/show'
   end
@@ -46,7 +47,7 @@ class BooksController < ApplicationController
   patch '/books/:slug' do
     @book = Book.find_by_slug(params[:slug])
     if logged_in? && params[:book_title]!="" && params[:book_summary] !="" && params[:book_year_published]!=""
-      @book.update(:title => params[:book_title], :book_summary => params[:book_summary], :year_published => params[:book_year_published])
+      @book.update(:title => params[:book_title], :summary => params[:book_summary], :year_published => params[:book_year_published])
       @book.category_id = params[:category_id]
       @book.save
       redirect to '/books/:slug'
