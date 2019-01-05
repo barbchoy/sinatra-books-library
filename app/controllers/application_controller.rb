@@ -8,10 +8,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :index
-  end
-
-  get '/login' do
     if !logged_in?
       erb :index
     else
@@ -19,8 +15,13 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/login' do
+    redirect to '/'
+  end
+
   post '/login' do
     @author = Author.find_by(:username => params[:username])
+    binding.pry
     if @author && @author.authenticate(params[:password])
       session[:user_id] = @author.id
       redirect to "/books"

@@ -1,4 +1,5 @@
 <h1>Welcome, <%=@author.name%> --  All Books</h1>
+&nbsp&nbsp&nbsp<a href='/logout'>Logout</a>
 <%Book.all.each do |book|%>
   <h2><%=book.title%></h2><br>
   Summary: <%=book.summary%><br><br>
