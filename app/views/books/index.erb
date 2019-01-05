@@ -1,13 +1,18 @@
 <h1>Welcome, <%=@author.name%> --  All Books</h1>
+<a href='/books/new'>Create a new book</a>
 &nbsp&nbsp&nbsp<a href='/logout'>Logout</a>
 <%Book.all.each do |book|%>
-  <h2><%=book.title%></h2><br>
-  Summary: <%=book.summary%><br><br>
-  Category: <%=book.category.name%><br><br>
-  Author: <%=book.author.name%><br><br>
-  Year Published: <%=book.year_published%><br><br>
+  <h3><a href='/books/<%=book.slug%>'><%=book.title%></a></h3>
   <%if @author.name==book.author.name%>
   <a href="/books/<%=book.slug%>/edit">Edit</a>&nbsp&nbsp
   <a href="/books/<%=book.slug%>/delete">Delete</a>
   <%end%>
+<%end%>
+<h2>[Filter By Author]</h2>
+<%Author.all.each do |author|%>
+<a href="/authors/<%=author.slug%>"><%=author.name%></a>&nbsp&nbsp
+<%end%>
+<h2>[Filter By Category]</h2>
+<%Category.all.each do |category|%>
+<a href="/categories/<%=category.slug%>"><%=category.name%></a>&nbsp&nbsp
 <%end%>

@@ -15,8 +15,20 @@ class BooksController < ApplicationController
     end
   end
 
-  post '/book/new' do
-    
+  post '/books/new' do
+    if !logged_in?
+      redirect to '/login'
+    else
+      @author = Author.find(session[:user_id])
+      @book = Book.create(:title => params[:book_title],
+        :summary => params[:book_summary],
+        :year_published => params[:book_year_published],
+        :author_id => @author.id,
+        :category_id => params[:category_id])
+      @book.save
+      redirect to '/books'
+    end
+
   end
 
   get '/books/:slug/edit' do
