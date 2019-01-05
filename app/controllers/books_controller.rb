@@ -15,6 +15,10 @@ class BooksController < ApplicationController
     end
   end
 
+  post '/book/new' do
+    
+  end
+
   get '/books/:slug/edit' do
     @book = Book.find_by_slug(params[:slug])
     @author = Author.find(session[:user_id])
