@@ -5,6 +5,7 @@ Summary: <%=book.summary%><br><br>
 Date Published: <%=book.date_published%><br><br>
 Category: <%=book.category.name%><br><br>
 <a href="/books/<%=book.slug%>"><button>Read It</button></a>
+<%binding.pry%>
 <%if @author.username == book.author.username%>
 <a href="/books/<%=book.slug%>/edit"><button>Edit</button></a>
 <a href="/books/<%=book.slug%>/delete"><button>Delete</button></a>

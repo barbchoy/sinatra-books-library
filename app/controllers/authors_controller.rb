@@ -11,8 +11,7 @@ class AuthorsController < ApplicationController
     if !logged_in?
       redirect to '/login'
     else
-      @author = Author.find_by_slug(params[:slug])
-      binding.pry
+      @author = Author.find(session[:user_id])
       erb :'authors/index'
     end
   end
@@ -22,7 +21,6 @@ class AuthorsController < ApplicationController
       redirect to '/login'
     else
       @author = Author.find_by_slug(params[:slug])
-      binding.pry
       @books = @author.books
       erb :'authors/show'
     end
