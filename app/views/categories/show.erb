@@ -10,7 +10,7 @@ Author: <%=book.author.name%><br><br>
 <a href="/books/<%=book.slug%>/delete"><button>Delete</button></a>
 <%end%>
 <%end%>
-<%@category.books.count==0%>
+<%if @category.books.count==0%>
 <h2>No books found.</h2>
 <%end%>
 <a href="/books">Return To All Books</a>

@@ -1,6 +1,7 @@
 <h1>Welcome, <%=@author.name%> --  All Books</h1>
-<a href='/books/new'><button>Create a new book</button></a>
-&nbsp&nbsp&nbsp<a href='/logout'><button>Logout</button></a>
+<a href='/authors/index'><button>My Profile</button></a>&nbsp&nbsp&nbsp
+<a href='/books/new'><button>Create a new book</button></a>&nbsp&nbsp&nbsp
+<a href='/logout'><button>Logout</button></a>
 <%Book.all.each do |book|%>
   <h3><a href='/books/<%=book.slug%>'><%=book.title%></a></h3>
   Summary: <%=book.summary%><br><br>
