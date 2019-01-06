@@ -1,5 +1,5 @@
 <h1>Books by <%=@category.name%></h1>
-<%@books.all.each do |book|%>
+<%@category.books.all.each do |book|%>
 <h2>Title: <%=book.title%></h2>
 Summary: <%=book.summary%><br><br>
 Date Published: <%=book.date_published%><br><br>
@@ -10,3 +10,7 @@ Author: <%=book.author.name%><br><br>
 <a href="/books/<%=book.slug%>/delete"><button>Delete</button></a>
 <%end%>
 <%end%>
+<%@category.books.count==0%>
+<h2>No books found.</h2>
+<%end%>
+<a href="/books">Return To All Books</a>

@@ -10,3 +10,8 @@ Category: <%=book.category.name%><br><br>
 <a href="/books/<%=book.slug%>/delete"><button>Delete</button></a>
 <%end%>
 <%end%>
+<%if @books.count==0%>
+<h2>No books found.</h2>
+<%end%>
+<br><br>
+<a href="/books">Return To All Books</a>
