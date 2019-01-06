@@ -3,11 +3,12 @@
 <form method="post" action="/books/new">
 <label>Title: </label><input type="text" name="book_title" /><br><br>
 <label>Summary: </label><input type="text" name="book_summary" /><br><br>
-<label>Year Published: </label><input type="text" name="book_year_published" /><br><br>
+<label>Date Published: </label><input type="text" name="book_date_published" value="<%=Date.today%>"/><br><br>
 <label>Category: </label>&nbsp&nbsp
 <%Category.all.each do |cat|%>
 <label><%=cat.name%></label><input type="checkbox" name="category_id" value="<%=cat.id%>"/>&nbsp&nbsp
 <%end%><br><br>
+<label>Content: </label><input type="text" name="book_content" /><br><br>
 <input type="submit" value="Submit"/>
 </form>
 <a href="/books">

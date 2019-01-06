@@ -2,7 +2,8 @@
 Summary: <%=@book.summary%><br><br>
 Category: <%=@book.category.name%><br><br>
 Author: <%=@book.author.name%><br><br>
-Year Published: <%=@book.year_published%><br><br>
+Date Published: <%=@book.date_published%><br><br>
+<%=@book.content%><br><br>
 <a href="/books">Return To All Books</a>&nbsp&nbsp
 <%if @user.name==@book.author.name%>
 <a href="/books/<%=@book.slug%>/edit">Edit</a>&nbsp&nbsp

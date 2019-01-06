@@ -22,9 +22,10 @@ class BooksController < ApplicationController
       @author = Author.find(session[:user_id])
       @book = Book.create(:title => params[:book_title],
         :summary => params[:book_summary],
-        :year_published => params[:book_year_published],
+        :date_published => params[:book_date_published],
         :author_id => @author.id,
-        :category_id => params[:category_id])
+        :category_id => params[:category_id],
+        :content => params[:book_content])
       @book.save
       redirect to '/books'
     end
