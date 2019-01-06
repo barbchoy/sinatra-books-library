@@ -12,6 +12,7 @@ class CategorysController < ApplicationController
       redirect to '/login'
     else
       @author = Author.find(session[:user_id])
+      @current_author = Author.find(session[:user_id])
       @category = Category.find_by_slug(params[:slug])
       erb :'categories/show'
     end

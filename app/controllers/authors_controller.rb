@@ -21,6 +21,7 @@ class AuthorsController < ApplicationController
       redirect to '/login'
     else
       @author = Author.find_by_slug(params[:slug])
+      @current_author = Author.find(session[:user_id])
       @books = @author.books
       erb :'authors/show'
     end
