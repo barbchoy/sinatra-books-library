@@ -9,7 +9,7 @@
   <h2>Category</h2>
   <%Category.all.each do |cat|%><br>
   <label><%=cat.name%></label>
-  <input type="checkbox" name="category_id" value="<%=cat.id%>" <%='checked' if cat==@book.category%>/>
+  <input type="radio" name="category_id" value="<%=cat.id%>" <%='checked' if cat==@book.category%>/>
   <%end%>
   <br><br><input type="submit" value="Save Changes">
   </form>
