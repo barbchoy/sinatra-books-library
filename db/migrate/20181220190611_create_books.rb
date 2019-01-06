@@ -2,7 +2,7 @@ class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
       t.string :title
-      t.integer :date_published
+      t.string :date_published
       t.text :summary
       t.text :content
       t.integer :author_id

@@ -1,5 +1,5 @@
 class Author < ActiveRecord::Base
-  
+
   has_many :books
   has_many :categorys
 
@@ -9,7 +9,7 @@ class Author < ActiveRecord::Base
     name.downcase.gsub(" ","-")
   end
 
-  def find_by_slug(slug)
-    Author.all.find{|author| author.slug==slug}
+  def self.find_by_slug(slug)
+    Author.all.find{|author| author.slug == slug}
   end
 end

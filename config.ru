@@ -7,5 +7,6 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 use Rack::MethodOverride
+use AuthorsController
 use BooksController
 run ApplicationController

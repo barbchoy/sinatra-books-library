@@ -21,7 +21,6 @@ class ApplicationController < Sinatra::Base
 
   post '/login' do
     @author = Author.find_by(:username => params[:username])
-    binding.pry
     if @author && @author.authenticate(params[:password])
       session[:user_id] = @author.id
       redirect to "/books"

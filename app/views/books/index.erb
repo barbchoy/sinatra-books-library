@@ -1,16 +1,16 @@
 <h1>Welcome, <%=@author.name%> --  All Books</h1>
-<a href='/books/new'>Create a new book</a>
-&nbsp&nbsp&nbsp<a href='/logout'>Logout</a>
+<a href='/books/new'><button>Create a new book</button></a>
+&nbsp&nbsp&nbsp<a href='/logout'><button>Logout</button></a>
 <%Book.all.each do |book|%>
   <h3><a href='/books/<%=book.slug%>'><%=book.title%></a></h3>
   Summary: <%=book.summary%><br><br>
   Category: <%=book.category.name%><br><br>
   Date Published: <%=book.date_published%><br><br>
   Author: <%=book.author.name%><br><br>
-  <a href="/books/<%=book.slug%>">Read It</a>&nbsp&nbsp
+  <a href="/books/<%=book.slug%>"><button>Read It</button></a>&nbsp&nbsp
   <%if @author.name==book.author.name%>
-  <a href="/books/<%=book.slug%>/edit">Edit</a>&nbsp&nbsp
-  <a href="/books/<%=book.slug%>/delete">Delete</a>
+  <a href="/books/<%=book.slug%>/edit"><button>Edit</button></a>&nbsp&nbsp
+  <a href="/books/<%=book.slug%>/delete"><button>Delete</button></a>
   <%end%>
 <%end%>
 <h2>[Filter By Author]</h2>
@@ -20,4 +20,4 @@
 <h2>[Filter By Category]</h2>
 <%Category.all.each do |category|%>
 <a href="/categories/<%=category.slug%>"><%=category.name%></a>&nbsp&nbsp
-<%end%>
+<%end%><br><br><br><br>

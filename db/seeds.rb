@@ -2,7 +2,7 @@ books_list = {
   "Beginning Ruby : From Novice to Professional" => {
     :author_id => 1,
     :category_id => 1,
-    :year_published => 2016,
+    :date_published => "Jan 30 2016",
     :summary => "Your must-read guide to learning Ruby from the ground up, this book will teach you the principles behind object-oriented programming and within a few chapters you will be able to create a fully functional Ruby application. -- Edited summary fro",
     :content => "New York (CNN Business)Anxiety on Wall Street may not bode well for high-profile private companies that hope to go public this year.Uber and Lyft have confidentially filed initial public offering documents with the Securities and Exchange Commission, which means more details about their financials should be available for investors within the coming months.
     The two could debut on Wall Street by late spring or early summer. Their IPOs would be gigantic: Uber was last valued at $72 billion, while Lyft was recently valued at $15 billion.
@@ -16,7 +16,7 @@ books_list = {
   "Coding : everything you need to get started with programming using Python" => {
     :author_id => 1,
     :category_id => 1,
-    :year_published => 2017,
+    :date_published => "Aug 23 2017",
     :summary => "Simple explanations and step-by-step guides ease users through the features of the Python programming language, providing them with everything they need to write code in the real world. --Publisher's description",
     :content => "New York (CNN Business)A Millennial pink couch, faux sheep skin pillows and gold accents are some of the first things you notice when you walk into Village Studio, an Instagram-worthy penthouse apartment in Manhattan's SoHo neighborhood. Everything is meticulously arranged, and the space is spotless.
 

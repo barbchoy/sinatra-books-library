@@ -1,0 +1,12 @@
+<h1>Books by <%=@author.name%></h1>
+<%@books.all.each do |book|%>
+<h2>Title: <%=book.title%></h2>
+Summary: <%=book.summary%><br><br>
+Date Published: <%=book.date_published%><br><br>
+Category: <%=book.category.name%><br><br>
+<a href="/books/<%=book.slug%>"><button>Read It</button></a>
+<%if @author.username == book.author.username%>
+<a href="/books/<%=book.slug%>/edit"><button>Edit</button></a>
+<a href="/books/<%=book.slug%>/delete"><button>Delete</button></a>
+<%end%>
+<%end%>
