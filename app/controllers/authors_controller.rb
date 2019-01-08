@@ -7,6 +7,15 @@ class AuthorsController < ApplicationController
     set :session_secret, "secret_password"
   end
 
+  get '/authors/edit' do
+    if !logged_in?
+      redirect to '/login'
+    else
+      @user = Author.find(session[:user_id])
+      erb :'authors/edit'
+    end
+  end
+
   get '/authors/index' do
     if !logged_in?
       redirect to '/login'

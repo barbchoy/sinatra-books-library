@@ -1,0 +1,8 @@
+<h1>Edit Profile - <%=@user.name%></h1>
+<form method="post" action="/authors/edit">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label>Name: </label><input type="text" name="user_name" value=<%=@user.name%> /><br><br>
+  <label>E-mail: </label><input type="text" name="user_email" value=<%=@user.email%> /><br><br>
+  <input type="submit" value="Save Changes"/>
+  </form>
+  <a href="/edit/show"><button>Cancel</button></a>
