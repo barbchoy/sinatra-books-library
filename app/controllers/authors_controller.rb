@@ -16,6 +16,17 @@ class AuthorsController < ApplicationController
     end
   end
 
+  patch '/authors/edit' do
+    if !logged_in?
+      redirect to '/login'
+    else
+      @user = Author.find(session[:user_id])
+      @user.update(:name => params[:user_name], :email => params[:user_email])
+      @user.save
+      redirect to ('/authors/index')
+    end
+  end
+
   get '/authors/index' do
     if !logged_in?
       redirect to '/login'
