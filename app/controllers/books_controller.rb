@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     end
   end
 
-  post '/books/new' do
+  post '/books' do
     if !logged_in?
       redirect to '/login'
     else
@@ -70,8 +70,9 @@ class BooksController < ApplicationController
   end
 
   patch '/books/:slug' do
+    @user = Author.find(session[:user_id])
     @book = Book.find_by_slug(params[:slug])
-    if logged_in? && params[:book_title]!="" && params[:book_summary] !="" && params[:book_date_published]!=""
+    if @user==@book.author && logged_in? && params[:book_title]!="" && params[:book_summary] !="" && params[:book_date_published]!=""
       @book.update(:title => params[:book_title], :summary => params[:book_summary], :date_published => params[:book_date_published])
       @book.category_id = params[:category_id]
       @book.save

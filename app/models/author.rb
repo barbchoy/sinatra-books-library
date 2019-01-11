@@ -12,4 +12,5 @@ class Author < ActiveRecord::Base
   def self.find_by_slug(slug)
     Author.all.find{|author| author.slug == slug}
   end
+
 end

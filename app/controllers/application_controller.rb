@@ -47,7 +47,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-    if params[:username]=="" || params[:password]=="" || params[:email]=="" || params[:name]==""
+    if Author.find_by(:username => params[:username])
+      redirect to "/signup"
+    elsif params[:username]=="" || params[:password]=="" || params[:email]=="" || params[:name]==""
       redirect to "/signup"
     else
       @author = Author.create(params)
